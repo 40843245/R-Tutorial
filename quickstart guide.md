@@ -99,22 +99,177 @@ install.packages(paste(foldername, packagename , sep = '/'),repos = NULL, type =
 library(packagenameWithoutQuotes, lib.loc = foldername) # add it into libarary.
 ```
 
+```
 Here, the variable `packagename` is `name of package that you want to download.`,
-
 `foldername` is `The name of destination folder that will be downloaded to.`, and
-
 `packagenameWithoutQuotes` is `name of package that you want to download But without quotes.`,
-
 You may want to change the value of variable `packagename`,`foldername`, and `packagenameWithoutQuotes` as you want.
+```
+
+or simply type these R code then execute it.
+
+```
+packagename <- 'caret'
+install.packages(packagename)
+```
+
+```
+Here, the variable `packagename` is `name of package that you want to download.
+```
 
 + Example 1:
 
+Type these R code then execute it.
+
 ```
-packagename <- 'caret' # name of package that you want to download.
-foldername <- 'C:/PublicData/RawRPackages' # The name of destination folder that will be downloaded to.
-install.packages(paste(foldername, packagename , sep = '/'),repos = NULL, type = "source") # command to download package.
-library(caret, lib.loc = foldername) # add it into libarary.
+install.packages('rmarkdown')
 ```
+
+It will show the mirror of package for download. And if one select `Taiwan` mirror. Then the `Taiwan mirror` of `rmarkdown` will be downloaded. In addition, during downloading, the message will be displayed. Such as
+
+```
+--- Please select a CRAN mirror for use in this session ---
+Warning: failed to download mirrors file (cannot open URL 'https://cran.r-project.org/CRAN_mirrors.csv'); using local file 'C:/PROGRA~1/R/R-44~1.1/doc/CRAN_mirrors.csv'
+also installing the dependencies ‘cli’, ‘glue’, ‘fs’, ‘R6’, ‘rappdirs’, ‘base64enc’, ‘cachem’, ‘fastmap’, ‘lifecycle’, ‘memoise’, ‘mime’, ‘rlang’, ‘sass’, ‘digest’, ‘highr’, ‘bslib’, ‘evaluate’, ‘fontawesome’, ‘htmltools’, ‘jquerylib’, ‘jsonlite’, ‘knitr’, ‘tinytex’, ‘xfun’, ‘yaml’
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/cli_3.6.3.zip'
+Content type 'application/zip' length 1361839 bytes (1.3 MB)
+downloaded 1.3 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/glue_1.7.0.zip'
+Content type 'application/zip' length 163516 bytes (159 KB)
+downloaded 159 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/fs_1.6.4.zip'
+Content type 'application/zip' length 412943 bytes (403 KB)
+downloaded 403 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/R6_2.5.1.zip'
+Content type 'application/zip' length 85007 bytes (83 KB)
+downloaded 83 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/rappdirs_0.3.3.zip'
+Content type 'application/zip' length 52566 bytes (51 KB)
+downloaded 51 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/base64enc_0.1-3.zip'
+Content type 'application/zip' length 33130 bytes (32 KB)
+downloaded 32 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/cachem_1.1.0.zip'
+Content type 'application/zip' length 73872 bytes (72 KB)
+downloaded 72 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/fastmap_1.2.0.zip'
+Content type 'application/zip' length 135365 bytes (132 KB)
+downloaded 132 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/lifecycle_1.0.4.zip'
+Content type 'application/zip' length 141047 bytes (137 KB)
+downloaded 137 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/memoise_2.0.1.zip'
+Content type 'application/zip' length 51156 bytes (49 KB)
+downloaded 49 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/mime_0.12.zip'
+Content type 'application/zip' length 40893 bytes (39 KB)
+downloaded 39 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/rlang_1.1.4.zip'
+Content type 'application/zip' length 1622822 bytes (1.5 MB)
+downloaded 1.5 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/sass_0.4.9.zip'
+Content type 'application/zip' length 2613570 bytes (2.5 MB)
+downloaded 2.5 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/digest_0.6.36.zip'
+Content type 'application/zip' length 221462 bytes (216 KB)
+downloaded 216 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/highr_0.11.zip'
+Content type 'application/zip' length 44214 bytes (43 KB)
+downloaded 43 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/bslib_0.8.0.zip'
+Content type 'application/zip' length 5594589 bytes (5.3 MB)
+downloaded 5.3 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/evaluate_0.24.0.zip'
+Content type 'application/zip' length 87036 bytes (84 KB)
+downloaded 84 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/fontawesome_0.5.2.zip'
+Content type 'application/zip' length 1351152 bytes (1.3 MB)
+downloaded 1.3 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/htmltools_0.5.8.1.zip'
+Content type 'application/zip' length 363175 bytes (354 KB)
+downloaded 354 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/jquerylib_0.1.4.zip'
+Content type 'application/zip' length 526071 bytes (513 KB)
+downloaded 513 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/jsonlite_1.8.8.zip'
+Content type 'application/zip' length 1107194 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/knitr_1.48.zip'
+Content type 'application/zip' length 1207784 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/tinytex_0.52.zip'
+Content type 'application/zip' length 143217 bytes (139 KB)
+downloaded 139 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/xfun_0.46.zip'
+Content type 'application/zip' length 538110 bytes (525 KB)
+downloaded 525 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/yaml_2.3.10.zip'
+Content type 'application/zip' length 119450 bytes (116 KB)
+downloaded 116 KB
+
+trying URL 'https://cran.csie.ntu.edu.tw/bin/windows/contrib/4.4/rmarkdown_2.27.zip'
+Content type 'application/zip' length 2694395 bytes (2.6 MB)
+downloaded 2.6 MB
+
+package ‘cli’ successfully unpacked and MD5 sums checked
+package ‘glue’ successfully unpacked and MD5 sums checked
+package ‘fs’ successfully unpacked and MD5 sums checked
+package ‘R6’ successfully unpacked and MD5 sums checked
+package ‘rappdirs’ successfully unpacked and MD5 sums checked
+package ‘base64enc’ successfully unpacked and MD5 sums checked
+package ‘cachem’ successfully unpacked and MD5 sums checked
+package ‘fastmap’ successfully unpacked and MD5 sums checked
+package ‘lifecycle’ successfully unpacked and MD5 sums checked
+package ‘memoise’ successfully unpacked and MD5 sums checked
+package ‘mime’ successfully unpacked and MD5 sums checked
+package ‘rlang’ successfully unpacked and MD5 sums checked
+package ‘sass’ successfully unpacked and MD5 sums checked
+package ‘digest’ successfully unpacked and MD5 sums checked
+package ‘highr’ successfully unpacked and MD5 sums checked
+package ‘bslib’ successfully unpacked and MD5 sums checked
+package ‘evaluate’ successfully unpacked and MD5 sums checked
+package ‘fontawesome’ successfully unpacked and MD5 sums checked
+package ‘htmltools’ successfully unpacked and MD5 sums checked
+package ‘jquerylib’ successfully unpacked and MD5 sums checked
+package ‘jsonlite’ successfully unpacked and MD5 sums checked
+package ‘knitr’ successfully unpacked and MD5 sums checked
+package ‘tinytex’ successfully unpacked and MD5 sums checked
+package ‘xfun’ successfully unpacked and MD5 sums checked
+package ‘yaml’ successfully unpacked and MD5 sums checked
+package ‘rmarkdown’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\40843\AppData\Local\Temp\RtmpGs5Mad\downloaded_packages
+Warning message:
+In download.file(url, destfile = f, quiet = TRUE) :
+  URL 'https://cran.r-project.org/CRAN_mirrors.csv': status was 'Couldn't connect to server'
+```
+
 ##### Ref
 From [the Thunder's answer on stackoverflow](https://stackoverflow.com/questions/14806705/manually-downloading-and-installing-packages-in-r),
 
@@ -122,6 +277,12 @@ From [the Thunder's answer on stackoverflow](https://stackoverflow.com/questions
 
 #### Way 2: Install packages in R through RStudio
 
+1. In RStudio, select `Packages` -> `Install package(s)...`.
+2. Then it will popup a windown. Select the package you want to download.
+
++ Example 1:
+
+For demo of download `rmarkdown` package in RStudio, see [Download R package in RStudio - way 2](https://www.youtube.com/watch?v=Fv0HhrW1dVw)
 
 ### Look at path that packages will be installed
 There are many ways to look at path that packages will be installed.
