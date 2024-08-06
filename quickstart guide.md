@@ -284,6 +284,9 @@ From [the Thunder's answer on stackoverflow](https://stackoverflow.com/questions
 
 For demo of download `rmarkdown` package in RStudio, see [Download R package in RStudio - way 2](https://www.youtube.com/watch?v=Fv0HhrW1dVw)
 
+> [!TIP]
+> Since there are no search query to quickly find the package you want to download.
+> Thus, I highly recommend that download the package by first way if you know the exactly name of package.
 ### Look at path that packages will be installed
 There are many ways to look at path that packages will be installed.
 
