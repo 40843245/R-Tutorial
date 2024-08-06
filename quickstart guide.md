@@ -22,6 +22,50 @@ See [get started of R official website](#R-official-website)
 7. Configure up the setting for downloading and click `Next` button.
 8. Wait until download is completed.
 
+## Get help
+### Get help of a command
+There are many ways to get help of a command.
+
+#### Way 1: Get help of a command through help() function
+
++ Example 1: Get help text of command `lm`
+
+Type these R code then execute it.
+
+```
+help(lm)
+```
+
+Or these code.
+
+```
+help("lm")
+```
+
+##### Ref
+See [Help yourself in R](#Help-yourself-in-R)
+ 
+#### Way 2: Get help of a command through ? directive
+
+Let's continue the previous example.
+
++ Example 1: Get help text of command `lm`
+
+Type these R code then execute it.
+
+```
+?lm
+```
+
+Or these code.
+
+```
+?"lm"
+```
+
+##### Ref
+See [Help yourself in R](#Help-yourself-in-R)
+
 ## Packages
 ### Install packages in R
 There are a few ways to install package in R.
@@ -34,15 +78,25 @@ Type these R code then execute it.
 packagename <- 'caret' # name of package that you want to download.
 foldername <- 'C:/PublicData/RawRPackages' # The name of destination folder that will be downloaded to.
 install.packages(paste(foldername, packagename , sep = '/'),repos = NULL, type = "source") # command to download package.
-library(caret, lib.loc = foldername) # add it into libarary.
+library(packagenameWithoutQuotes, lib.loc = foldername) # add it into libarary.
 ```
 
-Here, the variable `packagename` is `name of package that you want to download.` and 
+Here, the variable `packagename` is `name of package that you want to download.`,
 
-`foldername` is `The name of destination folder that will be downloaded to.`.
+`foldername` is `The name of destination folder that will be downloaded to.`, and
 
-You may want to change the value of variable `packagename` and `foldername` as you want.
- 
+`packagenameWithoutQuotes` is `name of package that you want to download But without quotes.`,
+
+You may want to change the value of variable `packagename`,`foldername`, and `packagenameWithoutQuotes` as you want.
+
++ Example 1:
+
+```
+packagename <- 'caret' # name of package that you want to download.
+foldername <- 'C:/PublicData/RawRPackages' # The name of destination folder that will be downloaded to.
+install.packages(paste(foldername, packagename , sep = '/'),repos = NULL, type = "source") # command to download package.
+library(caret, lib.loc = foldername) # add it into libarary.
+```
 ##### Ref
 From [the Thunder's answer on stackoverflow](https://stackoverflow.com/questions/14806705/manually-downloading-and-installing-packages-in-r),
 
@@ -89,5 +143,5 @@ From [the Rakesh's answer on stackoverflow](https://stackoverflow.com/questions/
 
 # [R official website](https://www.r-project.org/)
 # [CRAN mirrors](https://cran.r-project.org/mirrors.html)
-
+# [Help yourself in R](https://www.r-project.org/help.html)
 
