@@ -66,6 +66,24 @@ Or these code.
 ##### Ref
 See [Help yourself in R](#Help-yourself-in-R)
 
+### Get help online
+#### Get help online through ??
+
+Example 1:
+
+Type these R code then execute it.
+```
+??install
+```
+
+will first display the message on the R console.
+
+```
+starting httpd help server ... done
+```
+
+then open and redirect to [the online help](http://127.0.0.1:27727/doc/html/Search?objects=1&port=27727)
+
 ## Packages
 ### Install packages in R
 There are a few ways to install package in R.
