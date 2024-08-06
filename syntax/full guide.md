@@ -205,6 +205,126 @@ will output
 1.8
 ```
 
+#### Exponent
+
++ Example 1:
+
+```
+3 ^ 4
+```
+
+will output
+
+```
+81
+```
+
+#### Modulus (Remainder from division)
+
++ Example 1:
+
+```
+7 %% 4
+```
+
+will output
+
+```
+3
+```
+
++ Example 2:
+
+```
+5 %% 4
+```
+
+will output
+
+```
+1
+```
+
++ Example 3:
+
+```
+8 %% 4
+```
+
+will output
+
+```
+0
+```
+
++ Example 4:
+
+```
+-7 %% 4
+```
+
+will output
+
+```
+1
+```
+
++ Example 5:
+
+```
+-5 %% 4
+```
+
+will output
+
+```
+3
+```
+
++ Example 6:
+
+```
+5 %% -4
+```
+
+will output
+
+```
+```
+
++ Example 7:
+
+```
+8 %% -4
+```
+
+will output
+
+```
+```
+
++ Example 8:
+
+```
+-5 %% -4
+```
+
+will output
+
+```
+```
+
++ Example 9:
+
+```
+5 %% 0
+```
+
+will output
+
+```
+```
+
 #### Concatenation
 Use `paste()` function to concatenate two strings.
 
@@ -246,7 +366,7 @@ will output
 ```
 
 > [!CAUTION]
-> In math, it is NOT allow to compare two complex numbers. Such as `1+2i v.s. 3+4i`.
+> In math, it is NOT allow to compare two complex number which the imaginary part of two complex numbers are NOT same. Such as `1+2i v.s. 3+4i`.
 > It is NOT allowed to compare two numbers even if their imaginary part are same. Such as `1+1i v.s. 3+1i`.
 > And thus, they are NOT allowed to get minimum among complex numnbers and get maximum among complex numnbers.
 > Same principle is applied to R.
@@ -488,3 +608,89 @@ will output
 Warning message:
 In sqrt(-4) : NaNs produced
 ```
+
+### Comparison
+
++ Example 1:
+  
+```
+10 > 9
+10 == 9
+10 < 9
+```
+
+will output
+
+```
+TRUE
+FALSE
+FALSE
+```
+
++ Example 2:
+  
+```
+10i == 9i
+```
+
+will output
+
+```
+FALSE
+```
+
++ Example 3:
+  
+```
+10i != 9i
+```
+
+will output
+
+```
+TRUE
+```
+
++ Example 4:
+  
+```
+9i == 9i
+```
+
+will output
+
+```
+TRUE
+```
+
++ Example 5:
+  
+```
+9i != 9i
+```
+
+will output
+
+```
+FALSE
+```
+
+> [!CAUTION]
+> In R, it is NOT allow to compare two complex number which the imaginary part of two complex numbers are NOT same. Such as `1+2i v.s. 3+4i`.
+> For more details, see above `R` -> `syntax` -> `Operation` -> `math function` -> `min` section.
+
+Wrong Example:
+
++ Wrong Example 1:
+
+```
+10i > 9i
+```
+
+will output
+
+```
+Error in 0+10i > 0+9i : invalid comparison with complex values
+Execution halted
+```
+
