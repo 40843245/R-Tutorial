@@ -26,7 +26,7 @@ See [get started of R official website](#R-official-website)
 ### Install packages in R
 There are a few ways to install package in R.
 
-#### [Install packages in R through R code](https://stackoverflow.com/questions/14806705/manually-downloading-and-installing-packages-in-r)
+#### Way 1: [Install packages in R through R code](https://stackoverflow.com/questions/14806705/manually-downloading-and-installing-packages-in-r)
 
 Type these R code then execute it.
 
@@ -48,10 +48,13 @@ From [the Thunder's answer on stackoverflow](https://stackoverflow.com/questions
 
 ![image](https://github.com/user-attachments/assets/f485888e-aa75-4d7d-a0f7-32644ff0ed16)
 
+#### Way 2: Install packages in R through RStudio
+
+
 ### Look at path that packages will be installed
 There are many ways to look at path that packages will be installed.
 
-#### Look at path that packages will be installed through R code
+#### Way 1:Look at path that packages will be installed through R code
 
 Type these R code then execute it.
 
@@ -72,7 +75,7 @@ From [the James Thompson's answer on stackoverflow](https://stackoverflow.com/qu
 ### Clear the screen on the console
 There are many ways to clear the screen on the console.
 
-#### Clear the screen on the console through keyboard shortcuts
+#### Way 1:Clear the screen on the console through keyboard shortcuts
 
 If you are using the default R console, press <kbd>CTRL</kbd> + <kbd>L</kbd>
 
