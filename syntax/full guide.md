@@ -19,10 +19,13 @@ Use the symbol `<-` (recommend) or `=`.
 
 assignment in R.
 
-| symbol | is forbidden? | recommended |
-| ------- | ------------ | ----------- |
-| `<-` | NO, it can be used in all contexts. | Yes |
-| `=` | Sometimes, it is forbidden in some contexts. | No |
+| symbol | is forbidden? | recommended | description |
+| ------- | ------------ | ----------- | ---------   |
+| `<-` | NO, it can be used in all contexts. | Yes | |
+| `=` | Sometimes, it is forbidden in some contexts. | No | |
+|  `<<-` | | No | alias symbol of `<-` | 
+|  `->` | | No | alias symbol of `<-` | 
+|  `->>` | | No | alias symbol of `<-` | 
 
 > [!TIP]
 > Like other programming language, many variables can be assigned with same value in one line. See below example (Example 2).
@@ -278,7 +281,7 @@ will output
 will output
 
 ```
-3
+
 ```
 
 + Example 6:
@@ -290,6 +293,7 @@ will output
 will output
 
 ```
+-3
 ```
 
 + Example 7:
@@ -301,6 +305,7 @@ will output
 will output
 
 ```
+0
 ```
 
 + Example 8:
@@ -312,6 +317,7 @@ will output
 will output
 
 ```
+-1
 ```
 
 + Example 9:
@@ -323,7 +329,48 @@ will output
 will output
 
 ```
+NaN
 ```
+
+#### Integer Division
+Integer divison (%/%) rounds the result down to the nearest whole number where the result is division of a number and another number.
+
++ Example 1:
+
+```
+15 %/% 2
+```
+
+will output
+
+```
+7
+```
+
++ Example 2:
+
+```
+15 %/% 4
+```
+
+will output
+
+```
+3
+```
+
++ Example 3:
+
+```
+13 %/% 4
+```
+
+will output
+
+```
+3
+```
+
 
 #### Concatenation
 Use `paste()` function to concatenate two strings.
@@ -694,3 +741,4 @@ Error in 0+10i > 0+9i : invalid comparison with complex values
 Execution halted
 ```
 
+##
