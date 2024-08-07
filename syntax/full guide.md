@@ -36,17 +36,11 @@ assignment in R.
 > myVar1 <- 3
 > ```
 >
-> ```
-> myVar1 <<- 3
-> ```
 >
 > ```
 > 3 -> myVar1
 > ```
->
-> ```
-> 3 ->> myVar1
-> ```
+
 
 + Example 1:
   
@@ -781,4 +775,824 @@ Error in 0+10i > 0+9i : invalid comparison with complex values
 Execution halted
 ```
 
-##
+### Conditional statement
+#### if-else statement
+
++ Example 1:
+  
+```
+a <- 200
+b <- 33
+
+if (b > a) {
+  print("b is greater than a")
+} else if (a == b) {
+  print("a and b are equal")
+} else {
+  print("a is greater than b")
+}
+```
+
+will output
+
+```
+a is greater than b.
+```
+
++ Example 2:
+
+```
+x <- 41
+
+if (x > 10) {
+  print("Above ten")
+  if (x > 20) {
+    print("and also above 20!")
+  } else {
+    print("but not above 20.")
+  }
+} else {
+  print("below 10.")
+}
+```
+
+will output
+
+```
+"Above ten"
+"and also above 20!"
+```
+
+### Repetive loop
+#### for loop 
+
++ Example 1:
+  
+```
+for (x in 1:6) {
+  print(x)
+}
+```
+
+will output
+
+```
+1
+2
+3
+4
+5
+6
+```
+
++ Example 2:
+
+```
+fruits <- list("apple", "banana", "cherry")
+for (x in fruits) {
+  print(x)
+}
+```
+
+will output
+
+```
+"apple"
+"banana"
+"cherry"
+```
+
++ Example 3:
+
+```
+dice <- c(1, 2, 3, 4, 5, 6)
+for (x in dice) {
+  print(x)
+}
+```
+
+will output
+
+```
+1
+2
+3
+4
+5
+6
+```
+
+#### while loop
+
++ Example 1:
+
+```
+i <- 1
+while (i <= 6) {
+  print(i)
+  i <- i + 1
+}
+```
+
+will output
+
+```
+1
+2
+3
+4
+5
+6
+```
+
+> [!CAUTION]
+> In above example, please assign to the variable `i`. If not assign, the value of variable `i` will NEVER change and thus, eithr it will get stuck in th
+> infinite loop, or the loop is NOT executed.
+
+#### break keyword
+
+```
+fruits <- list("apple", "banana", "cherry")
+for (x in fruits) {
+  if (x == "banana") {
+    break
+  }
+  print(x)
+}
+```
+
+will output
+
+```
+"apple"
+```
+
+#### next keyword
+
++ Example 1:
+
+```
+fruits <- list("apple", "banana", "cherry")
+for (x in fruits) {
+  if (x == "banana") {
+    next
+  }
+  print(x)
+}
+```
+
+will output
+
+```
+"apple"
+"cherry"
+```
+
+### Function
+#### Definition of function
+To define a function, use `function` keyword with 0 or many `parameters`, then assign it to a function name
+
+#### Invocation of function
+To invoke a function, simply type the function name and pass `0` or many arguments.
+
++ Example 1:
+
+```
+myFunction <- function() {
+  print("Hello World!")
+}
+
+myFunction()
+```
+
+will output 
+
+```
+"Hello World!"
+```
+
++ Example 3: function that have parameter with default value.
+  
+```
+myFunction <- function(country = "Norway") {
+  print(paste("I am from", country))
+}
+
+myFunction("Sweden")
+myFunction("India")
+myFunction() # will use the default value, which is Norway
+myFunction("USA")
+```
+
+will output
+
+```
+"I am from Sweden"
+"I am from India"
+"I am from Norway"
+"I am from USA"
+```
+
++ Example 4:
+
+```
+myFunction <- function(x) {
+  return (5 * x)
+}
+
+print(myFunction(3))
+print(myFunction(5))
+print(myFunction(9))
+```
+
+will output
+
+```
+15
+25
+45
+```
+
+> [!CAUTION]
+> The numner of `parameter` in function must match the numner of `argument` in function call.
+> Otherwise, it will throw error at compile time. See below example.
+
+Wrong example:
+
++ Wrong Example 1:
+
+```
+my_function <- function(fname, lname) {
+  paste(fname, lname)
+}
+my_function("Peter")
+```
+
+will throw an error at complie time.
+
+### Global variables
+
++ Example 1:
+  
+```
+txt <- "global variable"
+myFunction <- function() {
+  txt = "fantastic"
+  paste("R is", txt)
+}
+myFunction()
+txt
+```
+
+will output
+
+```
+"global variable"
+
+
+```
+
++ Example 2:
+
+```
+myFunction <- function() {
+txt <<- "fantastic"
+  paste("R is", txt)
+}
+
+myFunction()
+print(txt)
+```
+
+will output
+
+```
+"fantastic"
+```
+
++ Example 3:
+
+```
+txt <- "awesome"
+myFunction <- function() {
+txt <<- "fantastic"
+  paste("R is", txt)
+}
+
+myFunction()
+print(txt)
+```
+
+will output
+
+```
+"fantastic"
+```
+
+### Complex data structure
+#### Vector
+##### Constructor
++ Example 1:
+  
+```
+fruits <- c("banana", "apple", "orange")
+fruits
+```
+
+will output
+
+```
+"banana" "apple" "orange"
+```
+
++ Example 2:
+  
+```
+numbers <- c(1, 2, 3)
+numbers
+```
+
+will output
+
+```
+1 2 3
+```
+
++ Example 3:
+  
+```
+numbers <- 1:10
+numbers
+
+```
+
+will output
+
+```
+1 2 3 4 5 6 7 8 9 10
+```
+
+#### list
+##### Constructor
+
+> [!IMPORTANT]
+> The index starts at 1.
+
++ Example 1:
+  
+```
+thislist <- list("apple", "banana", "cherry")
+thislist
+```
+
+will output 
+
+```
+apple", "banana", "cherry"
+```
+
+##### Access the index
+
++ Example 1:
+  
+```
+thislist <- list("apple", "banana", "cherry")
+thislist[1]
+```
+
+will output 
+
+```
+"apple"
+```
+
+##### Check elem contain 
+
++ Example 1:
+  
+```
+thislist <- list("apple", "banana", "cherry")
+"apple" %in% thislist
+```
+
+will output 
+
+```
+True
+```
+
+##### Insert the elem
+
++ Example 2:
+  
+```
+thislist <- list("apple", "banana", "cherry")
+append(thislist, "orange")
+thislist
+```
+
+will output 
+
+```
+"apple" "banana" "cherry" "orange"
+```
+
++ Example 2:
+  
+```
+thislist <- list("apple", "banana", "cherry")
+append(thislist, "orange" , after = 2)
+thislist
+```
+
+will output 
+
+```
+"apple" "banana" "orange" "cherry" 
+```
+
+##### Remove the elem 
+
++ Example 1:
+  
+```
+thislist <- list("apple", "banana", "cherry")
+newlist <- thislist[-1]
+thislist
+```
+
+will output 
+
+```
+"banana" "cherry" 
+```
+
+##### Range of Indexes
+
++ Example 1: 
+  
+```
+thislist <- list("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+(thislist)[2:5]
+```
+
+will output 
+
+```
+"banana", "cherry", "orange", "kiwi"
+```
+
+##### Loop through a list
+
++ Example 1: 
+  
+```
+thislist <- list("apple", "banana", "cherry")
+for (x in thislist) {
+  print(x)
+}
+```
+
+will output 
+
+```
+"apple"
+"banana"
+"cherry"
+```
+
+##### Join two list
+
++ Example 1: 
+  
+```
+list1 <- list("a", "b", "c")
+list2 <- list(1,2,3)
+list3 <- c(list1,list2)
+list3
+```
+
+will output 
+
+```
+"a" "b" "c" 1 2 3
+```
+
+#### Matrix
+##### Constructor
+
++ Example 1: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+thismatrix
+```
+
+will output 
+
+```
+1 4
+2 5
+3 6
+```
+
+##### Access single row or single column by index
+
++ Example 1: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+# Access 1th row and 2th col.
+thismatrix[1,2]
+```
+
+will output 
+
+```
+4
+```
+
++ Example 2: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+# Access 1th row.
+thismatrix[1,]
+```
+
+will output 
+
+```
+1 4
+```
+
++ Example 3: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+# Access 2th col.
+thismatrix[,2]
+```
+
+will output 
+
+```
+4
+5
+6
+```
+
+##### Access more than one row or column by index
+
++ Example 1: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+thismatrix[c(1,2),c(1,2)]
+```
+
+will output 
+
+```
+1 4
+2 5
+```
+
++ Example 2: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+thismatrix[,c(1,2)]
+```
+
+will output 
+
+```
+1 4
+2 5
+3 6
+```
+
++ Example 3: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+thismatrix[c(1,2),]
+```
+
+will output 
+
+```
+1 4
+2 5
+```
+
+##### Add new columns at end
+Use the `cbind()` function to add additional columns in a Matrix.
+
+> [!IMPORTANT]
+> The cells in the new column must be of the same length as the existing matrix.
+
++ Example 1: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+newmatrix <- cbind(thismatrix,c(7,8,9))
+newmatrix
+```
+
+will output 
+
+```
+1 4 7
+2 5 8
+3 6 9
+```
+
+##### Add new rows at end
+Use the `rbind()` function to add additional rows in a Matrix.
+
+> [!IMPORTANT]
+> The cells in the new row must be of the same length as the existing matrix.
+
++ Example 1: 
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+newmatrix <- rbind(thismatrix,c(7,8))
+newmatrix
+```
+
+will output 
+
+```
+1 4 
+2 5 
+3 6
+7 8
+```
+
+##### Remove rows and columns by index
+
++ Example 1: Remove first row
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+newmatrix <- thismatrix[ -c(1),]
+newmatrix
+```
+
+will output 
+
+``` 
+2 5 
+3 6
+```
+
++ Example 2: Remove first column
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+newmatrix <- thismatrix[ ,-c(1)]
+newmatrix
+```
+
+will output 
+
+``` 
+4
+5
+6
+```
+
++ Example 3: Remove first row and first column
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+newmatrix <- thismatrix[ -c(1),-c(1)]
+newmatrix
+```
+
+will output 
+
+``` 
+5
+6
+```
+
+##### Check if an item exists
+
++ Example 1:
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+1 %in% thismatrix
+```
+
+will output 
+
+``` 
+TRUE
+```
+
+##### Get number of rows and columns
+
++ Example 1:
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+dim(thismatrix)
+```
+
+will output 
+
+``` 
+3 2
+```
+
+##### Get Matrix length (i.e. number of elems)
+Use the `length()` function to find the number of elems of a Matrix.
+
++ Example 1:
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+length(thismatrix)
+```
+
+will output 
+
+``` 
+6
+```
+
+##### Loop through a Matrix
+
++ Example 1:
+  
+```
+# Create a matrix with 3 rows and 2 cols.
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+for (rows in 1:nrow(thismatrix)) {
+  for (columns in 1:ncol(thismatrix)) {
+    print(thismatrix[rows, columns])
+  }
+}
+```
+
+will output 
+
+``` 
+1
+2
+3
+4
+5
+6
+```
+
+##### Combine two Matrices
+
++ Example 1:
+  
+```
+# Example of combine matrices
+Matrix1 <- matrix(c("apple", "banana", "cherry", "grape"), nrow = 2, ncol = 2)
+Matrix2 <- matrix(c("orange", "mango", "pineapple", "watermelon"), nrow = 2, ncol = 2)
+
+# Adding it as a rows
+Matrix_Combined <- rbind(Matrix1, Matrix2)
+Matrix_Combined
+
+# Adding it as a columns
+Matrix_Combined <- cbind(Matrix1, Matrix2)
+Matrix_Combined
+```
+
+will output 
+
+``` 
+"apple"  "cherry"    
+"banana" "grape"     
+"orange" "pineapple" 
+"mango"  "watermelon"
+
+"apple"  "cherry" "orange" "pineapple" 
+"banana" "grape"  "mango"  "watermelon"
+```
+
