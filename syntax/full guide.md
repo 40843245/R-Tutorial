@@ -19,13 +19,13 @@ Use the symbol `<-` (recommend) or `=`.
 
 assignment in R.
 
-| symbol | is forbidden? | recommended | description |
-| ------- | ------------ | ----------- | ---------   |
-| `<-` | NO, it can be used in all contexts. | Yes | |
-| `=` | Sometimes, it is forbidden in some contexts. | No | |
-|  `<<-` | | No | alias symbol of `<-` | 
-|  `->` | | No | alias symbol of `<-` | 
-|  `->>` | | No | alias symbol of `<-` | 
+| symbol | is forbidden? | recommended | description | local v.s. global |
+| ------- | ------------ | ----------- | ---------   | ----------------- |
+| `<-` | NO, it can be used in all contexts. | Yes |  alias symbol of `->` | Assign to local variable. |
+| `=` | Sometimes, it is forbidden in some contexts. | No | | Assign to local variable. |
+|  `<<-` |  NO, it can be used in all contexts. | No | alias symbol of `->>` | Assign to global variable. |
+|  `->` |  NO, it can be used in all contexts. | No | alias symbol of `<-` | Assign to local variable. |
+|  `->>` |  NO, it can be used in all contexts. | No | alias symbol of `<<-` |  Assign to global variable.
 
 > [!TIP]
 > Like other programming language, many variables can be assigned with same value in one line. See below example (Example 2).
@@ -41,6 +41,16 @@ assignment in R.
 > 3 -> myVar1
 > ```
 
+> [!NOTE]
+> These are equivalent
+> ```
+> myVar1 <<- 3
+> ```
+>
+>
+> ```
+> 3 ->> myVar1
+> ```
 
 + Example 1:
   
