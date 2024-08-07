@@ -32,10 +32,21 @@ assignment in R.
 
 > [!NOTE]
 > These are equivalent
+> ```
 > myVar1 <- 3
+> ```
+>
+> ```
 > myVar1 <<- 3
+> ```
+>
+> ```
 > 3 -> myVar1
+> ```
+>
+> ```
 > 3 ->> myVar1
+> ```
 
 + Example 1:
   
