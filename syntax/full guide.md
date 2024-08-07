@@ -1292,9 +1292,10 @@ thismatrix
 will output 
 
 ```
-1 4
-2 5
-3 6
+    [,1] [,2]
+[1,] 1 4
+[2,] 2 5
+[3,] 3 6
 ```
 
 ##### Access single row or single column by index
@@ -1311,7 +1312,8 @@ thismatrix[1,2]
 will output 
 
 ```
-4
+    [,1]
+[1,] 4
 ```
 
 + Example 2: 
@@ -1326,7 +1328,8 @@ thismatrix[1,]
 will output 
 
 ```
-1 4
+    [,1] [,2] 
+[1,] 1 4
 ```
 
 + Example 3: 
@@ -1341,9 +1344,10 @@ thismatrix[,2]
 will output 
 
 ```
-4
-5
-6
+    [,1]
+[1,] 4
+[2,] 5
+[3,] 6
 ```
 
 ##### Access more than one row or column by index
@@ -1359,8 +1363,9 @@ thismatrix[c(1,2),c(1,2)]
 will output 
 
 ```
-1 4
-2 5
+    [,1] [,2]
+[1,] 1 4
+[2,] 2 5
 ```
 
 + Example 2: 
@@ -1374,9 +1379,10 @@ thismatrix[,c(1,2)]
 will output 
 
 ```
-1 4
-2 5
-3 6
+     [,1] [,2]
+[1,] 1 4
+[2,] 2 5
+[3,] 3 6
 ```
 
 + Example 3: 
@@ -1390,8 +1396,9 @@ thismatrix[c(1,2),]
 will output 
 
 ```
-1 4
-2 5
+    [,1] [,2]
+[1,] 1 4
+[2,] 2 5
 ```
 
 ##### Add new columns at end
@@ -1412,9 +1419,10 @@ newmatrix
 will output 
 
 ```
-1 4 7
-2 5 8
-3 6 9
+    [,1] [,2] [,3]
+[1,] 1 4 7
+[2,] 2 5 8
+[3,] 3 6 9
 ```
 
 ##### Add new rows at end
@@ -1435,10 +1443,11 @@ newmatrix
 will output 
 
 ```
-1 4 
-2 5 
-3 6
-7 8
+    [,1] [,2]
+[1,] 1 4 
+[2,] 2 5 
+[3,] 3 6
+[4,] 7 8
 ```
 
 ##### Remove rows and columns by index
@@ -1454,9 +1463,10 @@ newmatrix
 
 will output 
 
-``` 
-2 5 
-3 6
+```
+    [,1] [,2]
+[1,] 2 5 
+[2,] 3 6
 ```
 
 + Example 2: Remove first column
@@ -1586,13 +1596,544 @@ Matrix_Combined
 
 will output 
 
-``` 
-"apple"  "cherry"    
-"banana" "grape"     
-"orange" "pineapple" 
-"mango"  "watermelon"
+```
+     [,1]      [,2]
+[1,] "apple"  "cherry"    
+[2,] "banana" "grape"     
+[3,] "orange" "pineapple" 
+[4,] "mango"  "watermelon"
 
-"apple"  "cherry" "orange" "pineapple" 
-"banana" "grape"  "mango"  "watermelon"
+     [,1]      [,2]    [,3]      [,4]
+[1,] "apple"  "cherry" "orange" "pineapple" 
+[2,] "banana" "grape"  "mango"  "watermelon"
 ```
 
+#### Array
+##### Constructor
+
+> [!IMPORTANT]
+> Arrays can only have one data type.
+
++ Example 1:
+  
+```
+# An array with one dimension with values ranging from 1 to 24
+thisarray <- c(1:24)
+thisarray
+
+# An array with more than one dimension
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray
+```
+
+will output 
+
+``` 
+[1] 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+
+, , 1
+
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
+
+, , 2
+
+     [,1] [,2] [,3]
+[1,]   13   17   21
+[2,]   14   18   22
+[3,]   15   19   23
+[4,]   16   20   24
+```
+
+in [w3school demo](https://www.w3schools.com/r/tryr.asp?filename=demo_array)
+
+##### Access Array items by index
+
+> [!NOTE]
+> The syntax is as follow: `array[row position, column position, matrix level]`
+
+> [!TIP]
+> A comma (,) before c() means that we want to access the column.
+>
+> A comma (,) after c() means that we want to access the row.
+
+You can also access the whole row or column from a matrix in an array, by using the c() function:
+
++ Example 1:
+  
+```
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray[2, 3, 2]
+```
+
+will output 
+
+```
+[1] 22
+```
+
++ Example 2:
+  
+```
+thisarray <- c(1:24)
+
+# Access all the items from the first row from matrix one
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray[c(1),,1]
+
+# Access all the items from the first column from matrix one
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray[,c(1),1]
+```
+
+will output 
+
+```
+[1] 1 5 9
+[1] 1 2 3 4
+```
+
+##### Check if an item exists
+
++ Example 1:
+  
+```
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+2 %in% multiarray
+```
+
+will output 
+
+```
+TRUE
+```
+
+##### Get the dimension of an Array
+
++ Example 1:
+  
+```
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+dim(multiarray)
+```
+
+will output 
+
+```
+4 3 2
+```
+
+##### Get length (i.e. number of elems) of an Array 
+
++ Example 1:
+  
+```
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+length(multiarray)
+```
+
+will output 
+
+```
+24
+```
+
+##### Loop through an Array
+
++ Example 1:
+  
+```
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+for(x in multiarray){
+  print(x)
+}
+```
+
+will output 
+
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+```
+
+#### DataFrame
+> [!NOTE]
+> Data Frames are data displayed in a format as a table.
+
+> [!NOTE]
+> Data Frames can have different types of data inside it.
+> While the first column can be character, the second and third can be numeric or logical.
+> However, each column should have the same type of data.
+
+##### Constructor
+Use the `data.frame()` function to create a data frame.
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Print the data frame
+Data_Frame
+```
+
+will output
+
+```
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+```
+
+##### Summarize a DataFrame
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame
+
+summary(Data_Frame)
+```
+
+will output
+
+```
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+     Training     Pulse          Duration   
+ Other   :1   Min.   :100.0   Min.   :30.0  
+ Stamina :1   1st Qu.:110.0   1st Qu.:37.5  
+ Strength:1   Median :120.0   Median :45.0  
+              Mean   :123.3   Mean   :45.0  
+              3rd Qu.:135.0   3rd Qu.:52.5  
+              Max.   :150.0   Max.   :60.0
+```
+
+###### Accessing items of a DataFrame
+
+syntax:
+| syntax | where | description |
+| -----  | ----- | ----------- |
+| `Data_Frame[<index>]` | `<index>` indicates the index of the DataFrame. It should be an integer between `1` and `ncol(Data_Frame)`. | Select `<index>`th column of `Data_Frame`. |
+| `Data_Frame[[<index_name>]]` | `<index_name>` indicates the index name of the DataFrame (and should be quoted if it is a string). It should exist in row of `Data_Frame`. | Select the row of `Data_Frame` where index name is `<index_name>`. |
+| `Data_Frame$<index_name>` | `<index_name>` indicates the index name of the DataFrame (and should **NOT** be quoted if it is a string). It should exist in row of `Data_Frame`. | Select the row of `Data_Frame` where index name is `<index_name>`. |
+
+For more fully understand, see the following example.
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame
+
+'--------------------'
+
+Data_Frame[1]
+
+'--------------------'
+
+Data_Frame[["Training"]]
+
+'--------------------'
+
+Data_Frame$Training
+```
+
+will output
+
+```
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+[1] "--------------------"
+  Training
+1 Strength
+2  Stamina
+3    Other
+[1] "--------------------"
+[1] Strength Stamina  Other   
+Levels: Other Stamina Strength
+[1] "--------------------"
+[1] Strength Stamina  Other   
+Levels: Other Stamina Strength
+```
+
+##### Add rows
+Use the `rbind()` function to add new rows in a Data Frame.
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Add a new row
+New_row_DF <- rbind(Data_Frame, c("Strength", 110, 110))
+
+# Print the new row
+New_row_DF
+```
+
+will output
+
+```
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+4 Strength   110      110
+```
+
+##### Add columns
+Use the `cbind()` function to add new columns in a Data Frame.
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Add a new column
+New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))
+
+# Print the new column
+New_col_DF
+```
+
+will output
+
+```
+  Training Pulse Duration Steps
+1 Strength   100       60  1000
+2  Stamina   150       30  6000
+3    Other   120       45  2000
+```
+
+##### Remove rows and columns
+Use the `c()` function to remove rows and columns in a Data Frame.
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Remove the first row and column
+Data_Frame_New <- Data_Frame[-c(1), -c(1)]
+
+# Print the new data frame
+Data_Frame_New
+```
+
+will output
+
+```
+  Pulse Duration
+2   150       30
+3   120       45
+```
+
+##### Get number of rows and columns
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+dim(Data_Frame)
+```
+
+will output
+
+```
+3 3
+```
+
+##### Get number of rows
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+nrow(Data_Frame)
+```
+
+will output
+
+```
+3
+```
+
+##### Get number of columns
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+ncol(Data_Frame)
+```
+
+will output
+
+```
+3
+```
+
+##### Get length (i.e. the number of elem ) of a DataFrame
+
++ Example 1:
+  
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+length(Data_Frame)
+```
+
+will output
+
+```
+9
+```
+
+##### Combine DataFrames
+
+> [!TIP]
+> Use the `rbind()` function to combine two or more DataFrames `vertically` in R.
+>
+> Use the `cbind()` function to combine two or more DataFrames `horizontally` in R.
+
++ Example 1:
+
+```
+Data_Frame1 <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame2 <- data.frame (
+  Training = c("Stamina", "Stamina", "Strength"),
+  Pulse = c(140, 150, 160),
+  Duration = c(30, 30, 20)
+)
+
+New_Data_Frame <- rbind(Data_Frame1, Data_Frame2)
+New_Data_Frame
+```
+
+will output
+
+```
+  Training Pulse Duration
+1 Strength   100       60
+2  Stamina   150       30
+3    Other   120       45
+4  Stamina   140       30
+5  Stamina   150       30
+6 Strength   160       20
+```
+
++ Example 2:
+
+```
+Data_Frame3 <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame4 <- data.frame (
+  Steps = c(3000, 6000, 2000),
+  Calories = c(300, 400, 300)
+)
+
+New_Data_Frame1 <- cbind(Data_Frame3, Data_Frame4)
+New_Data_Frame1
+```
+
+will output
+
+```
+  Training Pulse Duration Steps Calories
+1 Strength   100       60  3000      300
+2  Stamina   150       30  6000      400
+3    Other   120       45  2000      300
+```
+
+#### Factor
