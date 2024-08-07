@@ -30,6 +30,13 @@ assignment in R.
 > [!TIP]
 > Like other programming language, many variables can be assigned with same value in one line. See below example (Example 2).
 
+> [!NOTE]
+> These are equivalent
+> myVar1 <- 3
+> myVar1 <<- 3
+> 3 -> myVar1
+> 3 ->> myVar1
+
 + Example 1:
   
 ```
@@ -39,6 +46,28 @@ myVar1 <- '123'
 will define a variable named `myVar1` and assign value `'123'` to the variable.
 
 + Example 2:
+
+```
+myVar1 <- 3
+myVar1 
+myVar1 <<- 3
+myVar1 
+3 -> myVar1
+myVar1 
+3 ->> myVar1
+myVar1
+```
+
+will output
+
+```
+3
+3
+3
+3
+```
+
++ Example 3:
   
 ```
 myVar1 <- myVar2 <- myVar3 <- '123'
