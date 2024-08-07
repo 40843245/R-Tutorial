@@ -2148,3 +2148,147 @@ will output
 
 #### Factor
 ##### Construct
+
+To create a Factor, use the `factor()` function and add a vector as argument.
+
+To set the levels, adding the `levels` argument inside the `factor()` function.
+
++ Example 1:
+
+```
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+# Print the factor
+music_genre
+```
+
+will output
+
+```
+[1] Jazz    Rock    Classic Classic Pop     Jazz    Rock    Jazz
+Levels: Classic Jazz Pop Rock
+```
+
++ Example 2:
+
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Other"))
+levels(music_genre)
+```
+
+will output
+
+```
+[1] "Classic" "Jazz"    "Pop"     "Rock"    "Other"
+```
+
+##### Print levels
+To only print the levels, use the `levels()` function.
+
++ Example 1:
+
+```
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+levels(music_genre)
+```
+
+will output
+
+```
+[1] "Classic" "Jazz"    "Pop"     "Rock"   
+```
+
+##### Access an item of Factors
+
++ Example 1:
+
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+music_genre[3]
+```
+
+will output
+
+```
+[1] Classic
+Levels: Classic Jazz Pop Rock
+```
+
+##### Change value of an item
+
++ Example 1:
+
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+music_genre[3]
+music_genre[3] <- "Pop"
+music_genre[3]
+```
+
+will output
+
+```
+[1] Classic
+Levels: Classic Jazz Pop Rock
+[1] Pop
+Levels: Classic Jazz Pop Rock
+```
+
++ Example 1:
+
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Opera"))
+music_genre[3]
+music_genre[3] <- "Opera"
+music_genre[3]
+```
+
+will output
+
+```
+[1] Classic
+Levels: Classic Jazz Pop Rock Opera
+[1] Opera
+Levels: Classic Jazz Pop Rock Opera
+```
+
+> [!WARNING]
+> It one tries to change value of item to an item that does NOT predefined, it will throws an `Warning`.
+>
+> See the following Wrong Example.
+
+
+Wrong Example:
+
++ Wrong Example 1:
+
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+music_genre[3] <- "Opera"
+music_genre[3]
+```
+
+will output
+
+```
+Warning message:
+In `[<-.factor`(`*tmp*`, 3, value = "Opera") :
+  invalid factor level, NA generated
+```
+
+##### Get length (i.e. the number of elem) of Factor
+
++ Example 1:
+
+```
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+length(music_genre)
+```
+
+will output
+
+```
+8
+```
