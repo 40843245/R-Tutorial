@@ -1805,7 +1805,7 @@ will output
 > While the first column can be character, the second and third can be numeric or logical.
 > However, each column should have the same type of data.
 
-##### Constructor
+##### Construct
 Use the `data.frame()` function to create a data frame.
 
 + Example 1:
@@ -2147,3 +2147,4 @@ will output
 ```
 
 #### Factor
+##### Construct
