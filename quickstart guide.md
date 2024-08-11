@@ -1,6 +1,6 @@
 # R
 ## Qt
-[Qt](^1)
+Qt [^1]
 ## Intro
 See [get started of R official website](#R-official-website)
 
