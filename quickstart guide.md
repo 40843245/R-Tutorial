@@ -338,7 +338,7 @@ From [the Rakesh's answer on stackoverflow](https://stackoverflow.com/questions/
 
 ## Footnotes
 
-[^1] [R official website](https://www.r-project.org/)
-[^2] [CRAN mirrors](https://cran.r-project.org/mirrors.html)
-[^3] [Help yourself in R](https://www.r-project.org/help.html)
+[^1]: [R official website](https://www.r-project.org/)
+[^2]: [CRAN mirrors](https://cran.r-project.org/mirrors.html)
+[^3]: [Help yourself in R](https://www.r-project.org/help.html)
 
