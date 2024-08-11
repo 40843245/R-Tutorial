@@ -1,6 +1,9 @@
 # R
+## Qt
+[Qt](^1)
 ## Intro
 See [get started of R official website](#R-official-website)
+
 ## Installation
 1. Visit [get started of R official website](#R-official-website)
 2. Click [download to R](#CRAN-mirrors) link, it will redirect to [CRAN mirrors page](#CRAN-mirrors)
@@ -28,6 +31,11 @@ See [get started of R official website](#R-official-website)
 ![image](https://github.com/user-attachments/assets/c8a6b1fc-95a0-4c8e-865c-c7e1b14c6b67)
 
 ![image](https://github.com/user-attachments/assets/c0942b21-4e25-4777-bd96-646342c151a3)
+
+## Update version 
+
+[How to automatically update R to the latest version?](https://stackoverflow.com/questions/59389515/how-to-automatically-update-r-to-the-latest-version)
+
 
 ## Get help
 ### Get help of a command
@@ -324,11 +332,15 @@ If you are using the default R console, press <kbd>CTRL</kbd> + <kbd>L</kbd>
 
 If you are using RStudio, press <kbd>CTRL</kbd> + <kbd>L</kbd>
 
+
 ##### Ref
 From [the Rakesh's answer on stackoverflow](https://stackoverflow.com/questions/14260340/function-to-clear-the-console-in-r-and-rstudio),
 
 ![image](https://github.com/user-attachments/assets/d9e97298-7181-4ae5-a6e1-2e78b4fd7510)
 
+## Footnotes
+
+[^1](https://doc.qt.io/)
 
 # [R official website](https://www.r-project.org/)
 # [CRAN mirrors](https://cran.r-project.org/mirrors.html)
