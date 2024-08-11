@@ -22,6 +22,13 @@ See [get started of R official website](#R-official-website)
 7. Configure up the setting for downloading and click `Next` button.
 8. Wait until download is completed.
 
+## Version
+### Look at version 
+
+![image](https://github.com/user-attachments/assets/c8a6b1fc-95a0-4c8e-865c-c7e1b14c6b67)
+
+![image](https://github.com/user-attachments/assets/c0942b21-4e25-4777-bd96-646342c151a3)
+
 ## Get help
 ### Get help of a command
 There are many ways to get help of a command.
