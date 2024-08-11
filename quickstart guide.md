@@ -1,12 +1,10 @@
 # R
-## Qt
-Qt [^1]
 ## Intro
-See [get started of R official website](#R-official-website)
+See get started of R official website[^1]
 
 ## Installation
-1. Visit [get started of R official website](#R-official-website)
-2. Click [download to R](#CRAN-mirrors) link, it will redirect to [CRAN mirrors page](#CRAN-mirrors)
+1. Visit get started of R official website[^1]
+2. Click download to R[^2] link, it will redirect to CRAN mirrors page[^2]
 3. According to language you want to download, choose the corresponding mirror and click its link. It will redirect to download page.
 
 > [!TIP]
@@ -58,7 +56,7 @@ help("lm")
 ```
 
 ##### Ref
-See [Help yourself in R](#Help-yourself-in-R)
+See Help yourself in R[^3]
  
 #### Way 2: Get help of a command through ? directive
 
@@ -79,7 +77,7 @@ Or these code.
 ```
 
 ##### Ref
-See [Help yourself in R](#Help-yourself-in-R)
+See Help yourself in R[^3]
 
 ### Get help online
 #### Get help online through ??
@@ -340,9 +338,7 @@ From [the Rakesh's answer on stackoverflow](https://stackoverflow.com/questions/
 
 ## Footnotes
 
-[^1]: https://doc.qt.io/
-
-# [R official website](https://www.r-project.org/)
-# [CRAN mirrors](https://cran.r-project.org/mirrors.html)
-# [Help yourself in R](https://www.r-project.org/help.html)
+[^1] [R official website](https://www.r-project.org/)
+[^2] [CRAN mirrors](https://cran.r-project.org/mirrors.html)
+[^3] [Help yourself in R](https://www.r-project.org/help.html)
 
