@@ -340,7 +340,7 @@ From [the Rakesh's answer on stackoverflow](https://stackoverflow.com/questions/
 
 ## Footnotes
 
-[^1](https://doc.qt.io/)
+[^1]: https://doc.qt.io/
 
 # [R official website](https://www.r-project.org/)
 # [CRAN mirrors](https://cran.r-project.org/mirrors.html)
